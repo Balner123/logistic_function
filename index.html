@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graf</title>
-	<style>
-p {
-    border: 1px solid black;
-    padding: 10px;    
-    margin: 10px 0; 
-}
-	</style>
-
+    <style>
+        p {
+            border: 1px solid black;
+            padding: 10px;    
+            margin: 10px 0; 
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-<p>VELIKOST POLE: <span id="velikost"></span></p>
-<p>
-Počáteční hodnota ( X[0] ): <input type="number" id="inputPocatek" value="0.5" step="0.1"><br>
+    <p>VELIKOST POLE: <input type="number" id="inputVelikost" value="100" step="10"></p>
+    <p>
+        Počáteční hodnota (X[0]): <input type="number" id="inputPocatek" value="0.5" step="0.1"><br>
         Růstová konstanta (R): <input type="number" id="inputRust" value="2" step="0.1"><br>
         Omezující faktor (N): <input type="number" id="inputNasyceni" value="1" step="0.1"><br><br>
- <button onclick="updateValues()">Aktualizovat graf</button>
-</p>
-<p>
-Funkce => <b>x(násl) = R*x*(N-x)</b>
-</p>
-
-<canvas id="myChart" width="400" height="300"></canvas>
-<script src="script.js"></script>
+        <button onclick="updateValues()">Aktualizovat graf</button>
+    </p>
+    <p>
+        Funkce => <b>x(násl) = R * x * (N - x)</b>
+    </p>
+    <canvas id="myChart" width="400" height="300"></canvas>
+    <script src="script.js"></script>
 </body>
 </html>
