@@ -5,29 +5,32 @@ let NASYCENI = 1;
 
 let pole = new Array(VELIKOST);
 
+document.getElementById('velikost').textContent = VELIKOST;
+
+function graf(){
+
 pole[0] = POCATEK;
 
 for (let i = 1; i < VELIKOST; i++) {
     pole[i] = RUST * pole[i - 1] * (NASYCENI - pole[i - 1]);
+    if(pole[i] < 0){pole[i]=0;}
 }
 
 console.log(pole);
-document.getElementById('velikost').textContent = VELIKOST;
+
+}
+
+graf();
 
 function updateValues() {
     POCATEK = parseFloat(document.getElementById('inputPocatek').value);
     RUST = parseFloat(document.getElementById('inputRust').value);
     NASYCENI = parseFloat(document.getElementById('inputNasyceni').value);
 
-    let pole = new Array(VELIKOST);
-    pole[0] = POCATEK;
+	graf();    
 
-    for (let i = 1; i < VELIKOST; i++) {
-        pole[i] = RUST * pole[i - 1] * (NASYCENI - pole[i - 1]);
-    }
     myChart.data.datasets[0].data = pole;
     myChart.update();
-console.log(pole);
 }
 
 // Vytvoření grafu pomocí Chart.js
