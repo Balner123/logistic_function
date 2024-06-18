@@ -5,13 +5,15 @@ let NASYCENI = 1;
 
 let pole = [];
 
-function graf(){
+function graf() {
     pole = new Array(VELIKOST);
     pole[0] = POCATEK;
 
     for (let i = 1; i < VELIKOST; i++) {
         pole[i] = RUST * pole[i - 1] * (NASYCENI - pole[i - 1]);
-        if(pole[i] < 0){ pole[i] = 0; }
+        if (pole[i] < 0) { 
+            pole[i] = 0; 
+        }
     }
     console.log(pole);
 }
@@ -54,7 +56,7 @@ function createChart() {
 let myChart = createChart();
 
 function updateValues() {
-    VELIKOST = parseInt(document.getElementById('inputVelikost').value, 10);
+    VELIKOST = parseInt(document.getElementById('inputVelikost').value);
     POCATEK = parseFloat(document.getElementById('inputPocatek').value);
     RUST = parseFloat(document.getElementById('inputRust').value);
     NASYCENI = parseFloat(document.getElementById('inputNasyceni').value);
