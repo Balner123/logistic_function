@@ -27,6 +27,7 @@ function updateValues() {
     }
     myChart.data.datasets[0].data = pole;
     myChart.update();
+console.log(pole);
 }
 
 // Vytvoření grafu pomocí Chart.js
